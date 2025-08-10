@@ -27,12 +27,12 @@ interface ContentTableProps {
 
 export default function ContentTable({ articles = [], loading }: ContentTableProps) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [statusFilter, setStatusFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState("all");
 
   const filteredArticles = articles.filter((article) => {
     const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          article.content.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesStatus = !statusFilter || article.status === statusFilter;
+    const matchesStatus = statusFilter === "all" || article.status === statusFilter;
     return matchesSearch && matchesStatus;
   });
 
@@ -87,7 +87,7 @@ export default function ContentTable({ articles = [], loading }: ContentTablePro
                 <SelectValue placeholder="ทั้งหมด" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">ทั้งหมด</SelectItem>
+                <SelectItem value="all">ทั้งหมด</SelectItem>
                 <SelectItem value="published">เผยแพร่แล้ว</SelectItem>
                 <SelectItem value="draft">ร่าง</SelectItem>
                 <SelectItem value="archived">เก็บถาวร</SelectItem>

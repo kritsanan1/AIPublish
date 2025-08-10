@@ -35,7 +35,7 @@ export default function ContentManagement() {
   const queryClient = useQueryClient();
   
   const [searchTerm, setSearchTerm] = useState("");
-  const [statusFilter, setStatusFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState("all");
   const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
   const [editingArticle, setEditingArticle] = useState<Article | null>(null);
   const [formData, setFormData] = useState({
@@ -204,7 +204,7 @@ export default function ContentManagement() {
   const filteredArticles = articles.filter((article: Article) => {
     const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          article.content.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesStatus = !statusFilter || article.status === statusFilter;
+    const matchesStatus = statusFilter === "all" || article.status === statusFilter;
     return matchesSearch && matchesStatus;
   });
 
@@ -380,7 +380,7 @@ export default function ContentManagement() {
                       <SelectValue placeholder="All Status" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">All Status</SelectItem>
+                      <SelectItem value="all">All Status</SelectItem>
                       <SelectItem value="draft">Draft</SelectItem>
                       <SelectItem value="published">Published</SelectItem>
                       <SelectItem value="archived">Archived</SelectItem>

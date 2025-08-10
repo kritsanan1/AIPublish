@@ -28,7 +28,7 @@ export default function UserManagement() {
   const { toast } = useToast();
   const { user: currentUser, isAuthenticated, isLoading } = useAuth();
   const [searchTerm, setSearchTerm] = useState("");
-  const [roleFilter, setRoleFilter] = useState("");
+  const [roleFilter, setRoleFilter] = useState("all");
 
   // Redirect to login if not authenticated
   useEffect(() => {
@@ -99,7 +99,7 @@ export default function UserManagement() {
     const matchesSearch = 
       user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
       `${user.firstName || ''} ${user.lastName || ''}`.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesRole = !roleFilter || user.role === roleFilter;
+    const matchesRole = roleFilter === "all" || user.role === roleFilter;
     return matchesSearch && matchesRole;
   });
 
@@ -318,7 +318,7 @@ export default function UserManagement() {
                       <SelectValue placeholder="บทบาททั้งหมด" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">บทบาททั้งหมด</SelectItem>
+                      <SelectItem value="all">บทบาททั้งหมด</SelectItem>
                       <SelectItem value="admin">ผู้ดูแลระบบ</SelectItem>
                       <SelectItem value="user">ผู้ใช้ทั่วไป</SelectItem>
                     </SelectContent>
