@@ -1,0 +1,97 @@
+# Project Name: Ayrshaer CMS
+
+## Description
+Ayrshaer CMS is a cross-platform mobile app designed for efficient content management with integrated payment systems, analytics, AI-driven personalization, and advanced AI content creation and predictive analytics features.
+
+## Primary Goals
+1. Provide a seamless content management experience across articles, images, and products.
+2. Integrate payment systems for monetization and subscription services.
+3. Deliver an analytics dashboard with AI-driven personalization and predictive insights.
+4. Design a user-friendly interface in Thai to target local businesses and content creators.
+
+----------------------------------------------------
+
+## Tech Stack & Environment
+
+**Frontend:** Vite + React + TypeScript + Tailwind CSS
+
+**Backend:** Supabase (PostgreSQL + Auth)
+
+**Target Platform:** Single-Page Application
+
+**Framework Versions & Config:** Latest stable versions
+
+----------------------------------------------------
+
+## Requirements & Features
+
+### Core Features:
+
+- User and Admin Roles: Different functionalities and access levels for regular users and administrators.
+
+- Content Management: Tools for creating, editing, and organizing articles, images, and products.
+
+- Payment Integration: Seamless payment processing for subscriptions and in-app purchases.
+
+- Analytics Dashboard: Comprehensive insights with AI-driven personalization and business analytics.
+
+- AI Content Creation Tools: Enable users to generate content using AI technologies.
+
+- Predictive Analytics: Provide business insights and forecasting through AI.
+
+### User Flows
+- Registration and login via email/social accounts.
+- Access to personalized dashboards based on user roles.
+- Content creation and management workflows.
+- Subscription management and payment processing.
+- Analytics and reporting access for admins and users.
+
+### Business Rules
+- Freemium model with tier-based access to features.
+- Role-based access control for user and admin functionalities.
+- Automatic payment retries for failed transactions.
+
+----------------------------------------------------
+
+## UI/UX Design
+
+### Layout
+- Mobile-first responsive design.
+- Intuitive navigation with a focus on content management tasks.
+
+### Look & Feel
+- Modern, sleek design with a Thai cultural influence.
+- Use of vibrant colors and intuitive interface elements.
+
+### Pages
+- Landing Page (in Thai language).
+- User Dashboard.
+- Admin Dashboard.
+- Content Management Portal.
+- Payment and Subscription Page.
+- Analytics Dashboard.
+
+### Components
+- Navigation Bar
+- Content Editor
+- Payment Form
+- Analytics Graphs
+- AI Tools Panel
+
+----------------------------------------------------
+
+## Data Model & Supabase Setup
+
+### Database Schema
+- Users: ID, email, role, subscription status
+- Articles: ID, title, content, authorID
+- Images: ID, URL, associatedArticleID
+- Products: ID, name, description, price, stock
+- Payments: ID, userID, amount, status, date
+
+### Row-Level Security
+Enabled by default
+
+### Auth Requirements
+- Email and third-party OAuth providers for authentication.
+- Secure password storage and management.
