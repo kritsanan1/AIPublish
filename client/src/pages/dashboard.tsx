@@ -10,7 +10,7 @@ import AnalyticsChart from "@/components/dashboard/analytics-chart";
 import RecentActivity from "@/components/dashboard/recent-activity";
 import ContentTable from "@/components/content/content-table";
 import ContentGenerator from "@/components/ai/content-generator";
-import PredictiveAnalytics from "@/components/ai/predictive-analytics";
+import { PredictiveAnalytics } from "@/components/ai/predictive-analytics";
 import { isUnauthorizedError } from "@/lib/authUtils";
 
 export default function Dashboard() {

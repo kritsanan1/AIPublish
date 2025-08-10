@@ -314,7 +314,7 @@ export default function Payments() {
                         <p className="text-sm text-muted-foreground mb-3">
                           Advanced features and AI tools
                         </p>
-                        {user?.subscriptionStatus === 'active' ? (
+                        {(user as any)?.subscriptionStatus === 'active' ? (
                           <Button variant="outline" disabled>
                             Currently Active
                           </Button>

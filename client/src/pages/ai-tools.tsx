@@ -5,7 +5,7 @@ import { isUnauthorizedError } from "@/lib/authUtils";
 import Sidebar from "@/components/layout/sidebar";
 import Header from "@/components/layout/header";
 import ContentGenerator from "@/components/ai/content-generator";
-import PredictiveAnalytics from "@/components/ai/predictive-analytics";
+import { PredictiveAnalytics } from "@/components/ai/predictive-analytics";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bot, Zap, TrendingUp, Lightbulb } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
